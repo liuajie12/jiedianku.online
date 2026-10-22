@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用教程中心 - Clash/v2rayN/Sing-box保姆级配置与技巧 | 节点库</title>
+  <meta name="description" content="节点库 (jiedianku.online) 教程中心。提供零基础客户端安装配置、订阅导入、TUN虚拟网卡设置、分流规则优化及防止DNS泄漏的实用技术文章。">
+  <meta name="keywords" content="Clash教程, 节点导入教程, 科学上网教程, v2rayN配置, Clash分流, 节点库教程, jiedianku.online">
+  <!-- SEO 基础规范 -->
+  <link rel="canonical" href="https://jiedianku.online/tutorials.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://jiedianku.online/tutorials.html">
+  <link rel="alternate" hreflang="x-default" href="https://jiedianku.online/tutorials.html">
+  <meta name="author" content="节点库 (jiedianku.online)">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://jiedianku.online/sitemap.xml">
+
+  <!-- GEO 地理定位标签 (Geotargeting) -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+  <meta name="DC.title" content="使用教程中心 - Clash/v2rayN/Sing-box保姆级配置与技巧">
+  <meta name="DC.publisher" content="jiedianku.online">
+  <meta name="DC.language" content="zh-CN">
+
+  <!-- Open Graph 社交协议 -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jiedianku.online/tutorials.html">
+  <meta property="og:site_name" content="节点库 (jiedianku.online)">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="使用教程中心 - Clash/v2rayN/Sing-box保姆级配置与技巧 | 节点库">
+  <meta property="og:description" content="包含新手零基础配置、防DNS泄漏、解锁海外AI等全方位图文攻略。">
+  <meta property="og:image" content="https://jiedianku.online/images/og-cover.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="使用教程中心 - 节点库">
+  <meta name="twitter:description" content="零基础客户端安装配置、订阅导入、TUN虚拟网卡设置、分流规则优化。">
+  <meta name="twitter:image" content="https://jiedianku.online/images/og-cover.png">
+
+  <!-- Schema.org 结构化数据 (GEO & AI 引擎优化) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://jiedianku.online/tutorials.html#webpage",
+        "url": "https://jiedianku.online/tutorials.html",
+        "name": "使用教程中心 - Clash/v2rayN/Sing-box保姆级配置与技巧",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://jiedianku.online/#website"
+        },
+        "description": "节点库 (jiedianku.online) 教程中心。提供零基础客户端安装配置、订阅导入、TUN虚拟网卡设置、分流规则优化及防止DNS泄漏的实用技术文章。",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "首页",
+              "item": "https://jiedianku.online/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "使用教程",
+              "item": "https://jiedianku.online/tutorials.html"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "name": "网络加速与科学上网教程合集",
+        "hasPart": [
+          {
+            "@type": "TechArticle",
+            "headline": "Clash Verge Rev 零基础完整上手指南（图文保姆级教程）",
+            "url": "https://jiedianku.online/tutorial-clash.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 顶部公告 -->
+  <aside class="announcement-bar">
+    <div class="container announcement-content">
+      <div>
+        <span class="announcement-badge">置顶教程</span>
+        <span>【新手必读】2026 最新 Clash Verge Rev 零基础完整配置指南已上线。</span>
+        <a href="tutorial-clash.html" class="announcement-link">立即阅读 &rarr;</a>
+      </div>
+      <div>
+        <a href="nodes.html" style="color: #94a3b8; font-size: 0.85rem;">去获取节点订阅 &rarr;</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 导航头部 Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">⚡</span>
+        <span>节点库 <span class="domain">.online</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="nodes.html">节点库/订阅</a></li>
+        <li><a href="recommend.html">机场推荐</a></li>
+        <li><a href="reviews.html">机场评测</a></li>
+        <li><a href="knowledge.html">机场知识库</a></li>
+        <li><a href="clients.html">客户端下载</a></li>
+        <li><a href="tutorials.html" class="active">使用教程</a></li>
+        <li><a href="tools.html">网络工具</a></li>
+        <li><a href="about.html">关于本站</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="nodes.html" class="btn btn-primary btn-sm">免费节点</a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section-py">
+    <!-- 面包屑导航 -->
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">首页</a>
+      <span>&rsaquo;</span>
+      <span style="color: var(--text-main);">使用教程中心</span>
+    </nav>
+
+    <!-- 标题与介绍 -->
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">📚 教程与技术指南中心</h1>
+        <p class="section-subtitle">
+          无论您是初次接触网络工具的小白，还是希望深入研究路由规则的进阶用户，这里都有最详尽的图文解答。
+        </p>
+      </div>
+      <div>
+        <a href="clients.html" class="btn btn-secondary btn-sm">下载客户端</a>
+      </div>
+    </div>
+
+    <!-- 教程文章列表 -->
+    <div class="article-grid">
+      <!-- 教程 1 (特色置顶，跳往独立详情页) -->
+      <article class="article-card" style="border: 1px solid rgba(59, 130, 246, 0.4);">
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-tag" style="background: var(--primary); color: #fff;">强烈推荐</span>
+            <span>2026-10-22</span>
+            <span>分类：新手入门</span>
+          </div>
+          <h2 class="article-title">
+            <a href="tutorial-clash.html" style="color: inherit;">2026 最新 Clash Verge Rev 零基础配置与节点导入保姆级教程</a>
+          </h2>
+          <p class="article-excerpt">
+            从官网下载安装包、汉化界面、复制导入本站节点订阅，到开启系统代理与选择低延迟节点的完整操作步骤，配有清晰图文与避坑说明。
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="tutorial-clash.html" class="btn btn-primary btn-sm">阅读完整图文教程 &rarr;</a>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">阅读：2,350次</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 教程 2 -->
+      <article class="article-card" id="dns-leak">
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-tag">网络隐私</span>
+            <span>2026-10-18</span>
+            <span>分类：安全进阶</span>
+          </div>
+          <h2 class="article-title">
+            <a href="#dns-leak" style="color: inherit;">如何彻底防止 WebRTC 与 DNS 泄漏？保护真实IP的终极指南</a>
+          </h2>
+          <p class="article-excerpt">
+            很多用户开启了代理却依旧被目标网站识别出真实国内IP，原因往往在于浏览器的 WebRTC 探测或使用了本地运营商的 DNS。本文教你如何在 Clash 开启 Fake-IP 与配置安全 DoH。
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="tools.html" class="btn btn-secondary btn-sm">前往 DNS 测漏工具 &rarr;</a>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">阅读：1,840次</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 教程 3 -->
+      <article class="article-card" id="protocols">
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-tag">协议评测</span>
+            <span>2026-10-15</span>
+            <span>分类：技术原理</span>
+          </div>
+          <h2 class="article-title">
+            <a href="#protocols" style="color: inherit;">VLESS Reality、VMess、Trojan、Hysteria2 协议深度解析与选型</a>
+          </h2>
+          <p class="article-excerpt">
+            为什么现在 Reality 逐渐取代了传统的 VMess？为什么 Hysteria2 能在恶劣弱网下跑满千兆带宽？带你读懂代理协议背后的握手加密与特征伪装机制。
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="nodes.html" class="btn btn-secondary btn-sm">在节点库中体验协议 &rarr;</a>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">阅读：1,560次</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 教程 4 -->
+      <article class="article-card" id="v2rayn">
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-tag">Windows</span>
+            <span>2026-10-12</span>
+            <span>分类：客户端指引</span>
+          </div>
+          <h2 class="article-title">
+            <a href="#v2rayn" style="color: inherit;">v2rayN 电脑端添加自定义节点与核心报错解决大全</a>
+          </h2>
+          <p class="article-excerpt">
+            总结 v2rayN 运行时常见的 1073741819 错误、系统代理未自动生效、PAC 模式失效以及如何批量测试 True Delay（真连接延迟）。
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="clients.html#windows" class="btn btn-secondary btn-sm">获取 v2rayN 客户端 &rarr;</a>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">阅读：1,210次</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 教程 5 -->
+      <article class="article-card" id="chatgpt-block">
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-tag">AI工具</span>
+            <span>2026-10-09</span>
+            <span>分类：实战技巧</span>
+          </div>
+          <h2 class="article-title">
+            <a href="#chatgpt-block" style="color: inherit;">访问 ChatGPT 提示“Access Denied / Blocked”完美解封指南</a>
+          </h2>
+          <p class="article-excerpt">
+            OpenAI 针对机房 IDC 广播 IP 拥有极其严格的拦截规则。教你如何选用高纯净住宅节点，以及设置浏览器无痕环境与 Cookie 清理方法。
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="nodes.html" class="btn btn-secondary btn-sm">提取日本/美国解锁节点 &rarr;</a>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">阅读：3,120次</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 教程 6 -->
+      <article class="article-card" id="shadowrocket">
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="article-tag">iOS苹果</span>
+            <span>2026-10-05</span>
+            <span>分类：移动端</span>
+          </div>
+          <h2 class="article-title">
+            <a href="#shadowrocket" style="color: inherit;">iPhone / iPad Shadowrocket (小火箭) 节点导入与分流规则设置</a>
+          </h2>
+          <p class="article-excerpt">
+            如何在 iOS 平台配置 Shadowrocket，实现国内网站（如百度、淘宝）直连走国内流量，海外网站（如 Google、YouTube）走代理节点的高速智能分流。
+          </p>
+          <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="clients.html#ios" class="btn btn-secondary btn-sm">查看 iOS 安装指南 &rarr;</a>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">阅读：2,090次</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- 教程答疑卡片 -->
+    <div class="sub-box" style="margin-top: 45px;">
+      <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 10px;">💬 遇到其他网络配置难题？</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 18px;">
+        您可以先访问我们的 <a href="tools.html" style="color:#60a5fa; text-decoration: underline;">【网络诊断工具箱】</a> 检测当前的出口 IP 与 DNS 状态，或者前往 <a href="about.html" style="color:#60a5fa; text-decoration: underline;">【关于我们】</a> 查看更多常见故障说明。
+      </p>
+      <a href="index.html" class="btn btn-secondary btn-sm">返回网站首页</a>
+    </div>
+  </main>
+
+  <!-- 底部页脚 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 14px;">
+            <span class="logo-badge">⚡</span>
+            <span>节点库 <span class="domain">.online</span></span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
+            节点库致力于普及科学健康的互联网技术知识，提供详实的图文教程与技术实践文档。
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>站点导航</h5>
+          <ul>
+            <li><a href="index.html">网站首页</a></li>
+            <li><a href="nodes.html">今日节点库</a></li>
+            <li><a href="recommend.html">机场推荐</a></li>
+            <li><a href="reviews.html">机场评测</a></li>
+            <li><a href="knowledge.html">机场知识库</a></li>
+            <li><a href="clients.html">客户端下载</a></li>
+            <li><a href="tutorials.html">配置教程库</a></li>
+            <li><a href="tools.html">网络测速工具</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>外部权威资源</h5>
+          <ul>
+            <li><a href="https://github.com/clash-verge-rev/clash-verge-rev" target="_blank" rel="noopener noreferrer">Clash Verge Rev 源码 ↗</a></li>
+            <li><a href="https://github.com/2dust/v2rayN" target="_blank" rel="noopener noreferrer">v2rayN 官方 GitHub ↗</a></li>
+            <li><a href="https://fast.com/" target="_blank" rel="noopener noreferrer">Fast.com 全球测速 ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>声明与支持</h5>
+          <ul>
+            <li><a href="about.html#disclaimer">法律免责声明</a></li>
+            <li><a href="about.html#contact">联系站长</a></li>
+            <li><a href="sitemap.xml">网站地图</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 jiedianku.online. 版权所有 保留所有权利。</div>
+        <div>教程内容仅供技术研究与交流使用。</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

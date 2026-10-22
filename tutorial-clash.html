@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 最新 Clash Verge Rev 零基础保姆级配置与节点导入图文教程 | 节点库</title>
+  <meta name="description" content="2026年最新版 Clash Verge Rev 零基础配置全流程教程。详细讲解如何从 GitHub 下载安装、切换简体中文语言、导入 jiedianku.online 节点订阅，以及开启系统代理与TUN模式。">
+  <meta name="keywords" content="Clash Verge Rev教程, Clash配置教程, 节点导入教程, 科学上网新手, Clash订阅, 节点库, jiedianku.online">
+  <!-- SEO 基础规范 -->
+  <link rel="canonical" href="https://jiedianku.online/tutorial-clash.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://jiedianku.online/tutorial-clash.html">
+  <link rel="alternate" hreflang="x-default" href="https://jiedianku.online/tutorial-clash.html">
+  <meta name="author" content="节点库 (jiedianku.online)">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://jiedianku.online/sitemap.xml">
+
+  <!-- GEO 地理定位标签 (Geotargeting) -->
+  <meta name="geo.region" content="HK">
+  <meta name="geo.placename" content="Hong Kong">
+  <meta name="geo.position" content="22.3193;114.1694">
+  <meta name="ICBM" content="22.3193, 114.1694">
+  <meta name="DC.title" content="2026 最新 Clash Verge Rev 零基础保姆级配置与节点导入图文教程">
+  <meta name="DC.publisher" content="jiedianku.online">
+  <meta name="DC.language" content="zh-CN">
+
+  <!-- Open Graph 社交协议 -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jiedianku.online/tutorial-clash.html">
+  <meta property="og:site_name" content="节点库 (jiedianku.online)">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="2026 最新 Clash Verge Rev 零基础保姆级配置教程 | 节点库">
+  <meta property="og:description" content="一步一步带你完成 Clash Verge Rev 客户端的安装与节点库订阅导入。">
+  <meta property="og:image" content="https://jiedianku.online/images/og-cover.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clash Verge Rev 零基础保姆级教程 - 节点库">
+  <meta name="twitter:description" content="详细讲解如何下载安装、切换中文语言、导入节点订阅，以及开启系统代理与TUN模式。">
+  <meta name="twitter:image" content="https://jiedianku.online/images/og-cover.png">
+
+  <!-- Schema.org 结构化数据 (HowTo / TechArticle - GEO & AI 优化) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://jiedianku.online/tutorial-clash.html#article",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://jiedianku.online/#website"
+        },
+        "headline": "2026 最新 Clash Verge Rev 零基础保姆级配置与节点导入图文教程",
+        "description": "2026年最新版 Clash Verge Rev 零基础配置全流程教程。详细讲解如何从 GitHub 下载安装、切换简体中文语言、导入 jiedianku.online 节点订阅，以及开启系统代理与TUN模式。",
+        "inLanguage": "zh-CN",
+        "datePublished": "2026-03-01T08:00:00+08:00",
+        "dateModified": "2026-10-22T12:00:00+08:00",
+        "author": {
+          "@type": "Organization",
+          "name": "节点库技术组",
+          "url": "https://jiedianku.online/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "节点库",
+          "url": "https://jiedianku.online/"
+        }
+      },
+      {
+        "@type": "HowTo",
+        "name": "如何配置 Clash Verge Rev 并导入科学上网节点",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "下载并安装客户端",
+            "text": "访问客户端下载页面下载对应操作系统的 Clash Verge Rev 安装包并完成安装。"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "设置中文界面与核心模式",
+            "text": "打开设置，语言切换为简体中文，内核选择 Clash Meta (Mihomo) 核心。"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "复制节点订阅链接并导入",
+            "text": "在节点库或机场后台复制订阅链接，粘贴至【订阅/配置】并点击导入。"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "开启系统代理或 TUN 模式",
+            "text": "在主界面勾选【系统代理】，选择自动选择或延迟最低的节点，畅享高速网络。"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 顶部公告 -->
+  <aside class="announcement-bar">
+    <div class="container announcement-content">
+      <div>
+        <span class="announcement-badge">图文专栏</span>
+        <span>本文适用环境：Windows 10/11 64位系统与 macOS 12+ 平台。</span>
+      </div>
+      <div>
+        <a href="nodes.html" class="announcement-link">获取配套今日节点 &rarr;</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 导航头部 Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">⚡</span>
+        <span>节点库 <span class="domain">.online</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="nodes.html">节点库/订阅</a></li>
+        <li><a href="recommend.html">机场推荐</a></li>
+        <li><a href="reviews.html">机场评测</a></li>
+        <li><a href="knowledge.html">机场知识库</a></li>
+        <li><a href="clients.html">客户端下载</a></li>
+        <li><a href="tutorials.html" class="active">使用教程</a></li>
+        <li><a href="tools.html">网络工具</a></li>
+        <li><a href="about.html">关于本站</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="nodes.html" class="btn btn-primary btn-sm">复制节点</a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 面包屑导航 -->
+    <nav class="breadcrumb" style="margin-top: 25px;" aria-label="breadcrumb">
+      <a href="index.html">首页</a>
+      <span>&rsaquo;</span>
+      <a href="tutorials.html">使用教程</a>
+      <span>&rsaquo;</span>
+      <span style="color: var(--text-main);">Clash Verge Rev 保姆级教程</span>
+    </nav>
+
+    <!-- 文章正文与侧边栏两栏布局 -->
+    <div class="post-layout">
+      <!-- 左侧正文 -->
+      <article class="post-content">
+        <div class="post-header">
+          <div class="article-meta">
+            <span class="article-tag">精选教程</span>
+            <span>更新日期：2026-10-22</span>
+            <span>作者：节点库技术组</span>
+            <span>预计阅读时间：5分钟</span>
+          </div>
+          <h1 class="post-title">2026 最新 Clash Verge Rev 零基础保姆级配置与节点导入指南</h1>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">
+            Clash Verge Rev 是目前公认最现代、最稳定且兼容性最广的 Clash 跨平台客户端。本文将通过图文步骤，带您 3 分钟内完成安装、汉化、订阅导入与顺畅联网。
+          </p>
+        </div>
+
+        <h2>一、准备工作：下载正版客户端</h2>
+        <p>
+          在开始之前，请务必从官方原版渠道下载，严禁从任何未经核实的第三方下载站下载被二次修改的安装程序，以防个人数据泄漏。
+        </p>
+        <ul>
+          <li><strong>Windows 用户：</strong>请前往 <a href="clients.html#windows">【客户端下载页面】</a> 下载 <code>Clash.Verge_x64-setup.exe</code> 安装程序；</li>
+          <li><strong>macOS 用户：</strong>M 系列芯片选择 <code>aarch64.dmg</code>，Intel 芯片选择 <code>x64.dmg</code>；</li>
+          <li><strong>官方 GitHub 仓库：</strong><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases" target="_blank" rel="noopener noreferrer">clash-verge-rev/releases ↗</a></li>
+        </ul>
+
+        <h2>二、第一步：安装与切换中文界面</h2>
+        <p>
+          双击下载的安装文件，按照提示点击“下一步”完成安装后启动软件。如果初始界面显示为英文，请按以下步骤切换：
+        </p>
+        <ol>
+          <li>点击左侧导航栏底部的 <strong>Settings (设置)</strong> 图标；</li>
+          <li>在 <strong>Verge Setting</strong> 中找到 <strong>Language (语言)</strong> 选项；</li>
+          <li>在下拉框中选择 <strong>简体中文 (zh-CN)</strong>，软件界面将立即自动更新为中文。</li>
+        </ol>
+
+        <h2>三、第二步：导入「节点库」免费订阅源</h2>
+        <p>
+          节点库 (jiedianku.online) 提供了自动测速过滤的通用订阅链接，直接导入软件即可保持节点池实时最新。
+        </p>
+
+        <div class="callout callout-info">
+          <strong>📌 专属免费订阅链接：</strong>
+          <pre style="background: rgba(0,0,0,0.3); padding: 8px; border-radius: 4px; margin-top: 6px; word-break: break-all; font-family: monospace;">https://jiedianku.online/api/v1/subscribe?cluster=global_mix_2026</pre>
+          <div style="margin-top: 8px;">
+            <button class="btn btn-primary btn-sm" data-copy="https://jiedianku.online/api/v1/subscribe?cluster=global_mix_2026">一键复制此订阅链接</button>
+            <a href="nodes.html" class="btn btn-secondary btn-sm" style="margin-left: 8px;">进入节点库手动复制单节点</a>
+          </div>
+        </div>
+
+        <p><strong>导入步骤：</strong></p>
+        <ol>
+          <li>在 Clash Verge Rev 左侧菜单点击 <strong>【订阅】 (Profiles)</strong>；</li>
+          <li>在顶部的输入框中，粘贴上方复制好的订阅链接；</li>
+          <li>点击右侧的 <strong>【导入】 (Import)</strong> 按钮；</li>
+          <li>等待 2-5 秒，列表中会出现名为 <code>jiedianku.online - 免费节点库</code> 的订阅卡片；</li>
+          <li><strong>重要：</strong>鼠标左键单击该卡片选中它（选中的卡片边缘会高亮变为蓝色）。</li>
+        </ol>
+
+        <h2>四、第三步：测速与选择节点</h2>
+        <p>
+          导入订阅后，点击左侧菜单的 <strong>【代理】 (Proxies)</strong> 页面：
+        </p>
+        <ul>
+          <li>在右上方点击 <strong>【延迟测速】 (闪电图标 ⚡)</strong>，软件会自动测试所有节点的网络延迟；</li>
+          <li>建议在 <strong>【节点选择】 (Proxy)</strong> 组中，选择绿色延迟（如 30ms ~ 60ms）的 <strong>香港</strong> 或 <strong>日本</strong> 节点；</li>
+          <li>模式推荐选择 <strong>【规则】 (Rule)</strong> 模式：国内网站直连不消耗代理流量，国外网站自动走代理，智能极速。</li>
+        </ul>
+
+        <h2>五、第四步：开启系统代理与畅游网络</h2>
+        <p>
+          回到软件左侧菜单的 <strong>【设置】 (Settings)</strong>：
+        </p>
+        <ul>
+          <li>找到 <strong>【系统代理】 (System Proxy)</strong> 开关，将其点击开启（开关变为蓝色激活状态）；</li>
+          <li>此时打开浏览器，访问海外学术或视频网站（例如 YouTube 或 Google），即可顺畅打开！</li>
+          <li>如果遇到某些特定应用不走代理，可以在设置中开启 <strong>【TUN 模式】</strong>（需授予管理员权限）。</li>
+        </ul>
+
+        <div class="callout callout-warning">
+          <strong>⚠️ 常见问题排查 Checklist：</strong>
+          <ul style="margin: 6px 0 0 16px; font-size: 0.92rem;">
+            <li><strong>测速全部 Timeout 超时：</strong>检查电脑系统时间是否准确，请在 Windows 设置中同步一下北京时间；</li>
+            <li><strong>网页打不开但显示已连上：</strong>检查是否有其他杀毒软件或网络防火墙阻止了 Clash 内核运行；</li>
+            <li><strong>无法访问海外 AI (ChatGPT)：</strong>进入代理列表切换到 <strong>美国</strong> 或 <strong>原生 IP</strong> 节点，并清理浏览器缓存。</li>
+          </ul>
+        </div>
+
+        <div style="border-top: 1px solid var(--border-color); padding-top: 24px; margin-top: 36px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+          <div>
+            <span style="font-size: 0.9rem; color: var(--text-dim);">觉得本教程有帮助？分享给更多技术同好</span>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <a href="nodes.html" class="btn btn-primary btn-sm">前往节点库测试</a>
+            <a href="tutorials.html" class="btn btn-secondary btn-sm">返回教程列表</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右侧侧边栏 Sidebar -->
+      <aside>
+        <!-- 侧边栏 Widget 1: 今日节点速递 -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">🔥 节点库即时可用</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
+            节点均已通过 YouTube 4K 测速，可直接一键复制。
+          </p>
+          <ul class="widget-links">
+            <li>
+              <a href="nodes.html">🇭🇰 香港 01 BGP直连 (32ms)</a>
+            </li>
+            <li>
+              <a href="nodes.html">🇯🇵 日本 02 AWS原生IP (48ms)</a>
+            </li>
+            <li>
+              <a href="nodes.html">🇸🇬 新加坡 03 极速骨干 (55ms)</a>
+            </li>
+            <li>
+              <a href="nodes.html">🇺🇸 美国 01 4K 流媒体 (138ms)</a>
+            </li>
+          </ul>
+          <a href="nodes.html" class="btn btn-secondary btn-sm" style="width: 100%; margin-top: 10px;">进入节点库筛选 &rarr;</a>
+        </div>
+
+        <!-- 侧边栏 Widget 2: 客户端下载 -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">💻 常用客户端通道</h3>
+          <ul class="widget-links">
+            <li><a href="clients.html#windows">🪟 Clash Verge Rev (Windows)</a></li>
+            <li><a href="clients.html#macos">🍏 Clash Verge (macOS)</a></li>
+            <li><a href="clients.html#android">🤖 Clash Meta for Android</a></li>
+            <li><a href="clients.html#ios">📱 Shadowrocket 小火箭 (iOS)</a></li>
+          </ul>
+        </div>
+
+        <!-- 侧边栏 Widget 3: 诊断工具推荐 -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">🛠 网络检测工具</h3>
+          <ul class="widget-links">
+            <li><a href="tools.html#ip-check">🔎 出口 IP 及归属地查询</a></li>
+            <li><a href="tools.html#dns-check">🛡️ DNS 泄漏在线检测</a></li>
+            <li><a href="tools.html#speed-test">⚡ 全球网络带宽延迟测速</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 底部页脚 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 14px;">
+            <span class="logo-badge">⚡</span>
+            <span>节点库 <span class="domain">.online</span></span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
+            技术文档由节点库社区共同维护，保持与最新客户端版本同步更新。
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>站点导航</h5>
+          <ul>
+            <li><a href="index.html">网站首页</a></li>
+            <li><a href="nodes.html">今日节点库</a></li>
+            <li><a href="recommend.html">机场推荐</a></li>
+            <li><a href="reviews.html">机场评测</a></li>
+            <li><a href="knowledge.html">机场知识库</a></li>
+            <li><a href="clients.html">客户端下载</a></li>
+            <li><a href="tutorials.html">配置教程库</a></li>
+            <li><a href="tools.html">网络测速工具</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>外部权威资源</h5>
+          <ul>
+            <li><a href="https://github.com/clash-verge-rev/clash-verge-rev" target="_blank" rel="noopener noreferrer">Clash Verge Rev 源码 ↗</a></li>
+            <li><a href="https://github.com/2dust/v2rayN" target="_blank" rel="noopener noreferrer">v2rayN 官方 GitHub ↗</a></li>
+            <li><a href="https://fast.com/" target="_blank" rel="noopener noreferrer">Fast.com 全球测速 ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>声明与支持</h5>
+          <ul>
+            <li><a href="about.html#disclaimer">法律免责声明</a></li>
+            <li><a href="about.html#contact">联系站长</a></li>
+            <li><a href="sitemap.xml">网站地图</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 jiedianku.online. 版权所有 保留所有权利。</div>
+        <div>请遵守国家法律法规，规范使用计算机网络技术。</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

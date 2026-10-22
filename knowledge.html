@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>机场知识库 - IPLC专线原理/协议科普/流媒体解锁与避坑指南 | 节点库</title>
+  <meta name="description" content="节点库 (jiedianku.online) 官方机场知识库。深度系统科普什么是机场、IPLC与IEPL专线底层原理、VLESS Reality/Trojan/Hysteria2协议区别、原生IP流媒体解锁机制与防跑路避坑百科。">
+  <meta name="keywords" content="机场知识库, IPLC专线原理, IEPL专线区别, 翻墙协议科普, VLESS原理, 原生IP解锁, 机场避坑, 节点库, jiedianku.online">
+  <meta name="author" content="节点库 (jiedianku.online)" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- Canonical & Sitemap 规范网址 -->
+  <link rel="canonical" href="https://jiedianku.online/knowledge.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://jiedianku.online/knowledge.html" />
+  <link rel="alternate" hreflang="x-default" href="https://jiedianku.online/knowledge.html" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://jiedianku.online/sitemap.xml" />
+
+  <!-- Traditional GEO Geotargeting 地理定位标签 -->
+  <meta name="geo.region" content="HK" />
+  <meta name="geo.placename" content="Hong Kong" />
+  <meta name="geo.position" content="22.3193;114.1694" />
+  <meta name="ICBM" content="22.3193, 114.1694" />
+  <meta name="DC.title" content="机场技术与避坑知识库 - 节点库" />
+  <meta name="DC.publisher" content="jiedianku.online" />
+  <meta name="DC.language" content="zh-CN" />
+
+  <!-- Open Graph 社交分享标签 -->
+  <meta property="og:site_name" content="节点库 (jiedianku.online)">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jiedianku.online/knowledge.html">
+  <meta property="og:title" content="机场知识库 - IPLC专线原理/协议科普/流媒体解锁与避坑百科">
+  <meta property="og:description" content="系统化网络加速与代理知识库，解答从小白入门到硬核专线技术的全套疑问。">
+  <meta property="og:locale" content="zh_CN">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="机场知识库 - 节点库">
+  <meta name="twitter:description" content="IPLC/IEPL专线原理、VLESS/Trojan协议深度对比与防跑路法则。">
+  <meta name="twitter:url" content="https://jiedianku.online/knowledge.html">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Generative Engine Optimization (GEO) & Schema.org JSON-LD 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://jiedianku.online/knowledge.html#webpage",
+        "url": "https://jiedianku.online/knowledge.html",
+        "name": "机场知识库 - 节点库",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://jiedianku.online/#website",
+          "name": "节点库",
+          "url": "https://jiedianku.online/"
+        },
+        "description": "网络中继专线技术、协议安全与防封防跑路知识百科。"
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* 知识库专用样式 */
+    .wiki-nav-strip {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .wiki-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 32px;
+      transition: var(--transition);
+    }
+    .wiki-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-sm);
+    }
+    .wiki-card h2 {
+      font-size: 1.45rem;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+    .wiki-card h3 {
+      font-size: 1.15rem;
+      color: #93c5fd;
+      margin: 20px 0 10px 0;
+    }
+    .wiki-card p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .wiki-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .wiki-table th, .wiki-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border-color);
+      text-align: left;
+    }
+    .wiki-table th {
+      background: rgba(255, 255, 255, 0.04);
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部公告 -->
+  <aside class="announcement-bar">
+    <div class="container announcement-content">
+      <div>
+        <span class="announcement-badge">知识库</span>
+        <span>了解网络专线原理与协议本质，不花冤枉钱，理性挑选最适合自己的网络服务。</span>
+      </div>
+      <div>
+        <a href="recommend.html" class="announcement-link">前往 15 家精选机场推荐 &rarr;</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 导航头部 Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="logo">
+        <span class="logo-badge">⚡</span>
+        <span>节点库 <span class="domain">.online</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="nodes.html">节点库/订阅</a></li>
+        <li><a href="recommend.html">机场推荐</a></li>
+        <li><a href="reviews.html">机场评测</a></li>
+        <li><a href="knowledge.html" class="active">机场知识库</a></li>
+        <li><a href="clients.html">客户端下载</a></li>
+        <li><a href="tutorials.html">使用教程</a></li>
+        <li><a href="tools.html">网络工具</a></li>
+        <li><a href="about.html">关于本站</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="nodes.html" class="btn btn-secondary btn-sm">免费节点</a>
+        <a href="recommend.html" class="btn btn-primary btn-sm">精选机场</a>
+        <button class="mobile-toggle" aria-label="展开导航菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section-py">
+    <!-- 面包屑导航 -->
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">首页</a>
+      <span>&rsaquo;</span>
+      <span style="color: var(--text-main);">机场技术与避坑知识库</span>
+    </nav>
+
+    <!-- 标题与介绍 -->
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">📖 机场技术与网络中继系统知识库</h1>
+        <p class="section-subtitle">
+          从网络小白的“为什么叫机场”，到骨干网 IPLC/IEPL 物理专线、GFW 探测机制、协议特征对比与防跑路法则的系统化指南。
+        </p>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <a href="reviews.html" class="btn btn-secondary btn-sm">📊 15家实测报告</a>
+        <a href="tools.html" class="btn btn-secondary btn-sm">🛠 网络检测工具</a>
+      </div>
+    </div>
+
+    <!-- 知识库章节快捷锚点 -->
+    <div class="wiki-nav-strip">
+      <a href="#what-is-airport" class="btn btn-secondary btn-sm">✈️ 1. 什么是机场？</a>
+      <a href="#iplc-iepl" class="btn btn-secondary btn-sm">🌐 2. IPLC vs IEPL 专线原理</a>
+      <a href="#protocols-diff" class="btn btn-secondary btn-sm">⚡ 3. 主流协议深度解析</a>
+      <a href="#native-ip" class="btn btn-secondary btn-sm">🎬 4. 原生 IP 与流媒体/AI 解锁</a>
+      <a href="#anti-fraud" class="btn btn-secondary btn-sm">🚨 5. 跑路预警与避坑黄金法则</a>
+      <a href="#dns-security" class="btn btn-secondary btn-sm">🛡️ 6. 隐私安全与防 DNS 泄漏</a>
+    </div>
+
+    <!-- 知识板块 1: 基础认知 -->
+    <article class="wiki-card" id="what-is-airport">
+      <h2>✈️ 一、基础认知：为什么代理服务商被称为“机场”？</h2>
+      <p>
+        在科学上网与网络加速语境中，“机场”是指提供批量代理节点与订阅服务的商业中继服务平台。这一俗称来源于早期著名代理工具 <strong>Shadowsocks (影梭)</strong> 的纸飞机图标。既然软件图标是“小飞机”，那么成百上千架小飞机的起落港口自然就被戏称为“机场”。
+      </p>
+      <h3>免费节点 vs 商业机场的核心区别：</h3>
+      <ul style="margin-left: 20px; line-height: 1.8; color: #cbd5e1;">
+        <li><strong>免费节点 (Public Nodes)：</strong> 多为热心网友分享、爬虫采集或公共开放中继。优点是完全零成本；缺点是公用人数众多、IP 容易被风控、生命周期短且晚高峰易断流，适合轻度应急；</li>
+        <li><strong>商业机场 (Airports)：</strong> 租用企业级国内入口服务器与跨境物理专线，提供多区域集群调度、自动化负载均衡、原生 IP 解锁与专属客服，适合追求高可靠性、4K/8K 视频与跨国办公用户。</li>
+      </ul>
+      <div style="margin-top: 14px;">
+        <a href="nodes.html" class="btn btn-secondary btn-sm">浏览今日免费节点库 &rarr;</a>
+        <a href="recommend.html" class="btn btn-primary btn-sm" style="margin-left: 8px;">查看 15 家推荐机场 &rarr;</a>
+      </div>
+    </article>
+
+    <!-- 知识板块 2: 专线原理 -->
+    <article class="wiki-card" id="iplc-iepl">
+      <h2>🌐 二、线路架构原理：直连、BGP 中继、IPLC 与 IEPL 专线</h2>
+      <p>
+        决定一个节点是否稳定、晚高峰是否卡顿的最核心要素不是协议，而是<strong>物理线路架构</strong>。
+      </p>
+      <table class="wiki-table">
+        <thead>
+          <tr>
+            <th>线路类型</th>
+            <th>物理传输路径</th>
+            <th>是否经过 GFW 审查</th>
+            <th>晚高峰表现</th>
+            <th>代表特点与成本</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>普通直连 (Direct)</strong></td>
+            <td>本地网络 &rarr; 公网国际出口 &rarr; 境外服务器</td>
+            <td>是（经公网国际出口拦截）</td>
+            <td>极易丢包拥堵，偶发阻断</td>
+            <td>成本极低，极易被墙</td>
+          </tr>
+          <tr>
+            <td><strong>BGP 隧道中继</strong></td>
+            <td>本地 &rarr; 国内 BGP 入口 &rarr; 加密隧道 &rarr; 境外出口</td>
+            <td>是（经公网出境）</td>
+            <td>较稳定，但受公网拥堵影响</td>
+            <td>三网自动优化，性价比高</td>
+          </tr>
+          <tr>
+            <td><strong>IPLC 纯内网专线</strong></td>
+            <td>本地 &rarr; 国内入口机房 &rarr; <strong>内网海底物理光缆</strong> &rarr; 境外机房</td>
+            <td><strong style="color: var(--accent-emerald);">否（纯内网点对点互联）</strong></td>
+            <td><strong style="color: var(--accent-emerald);">极稳，几乎 0 丢包</strong></td>
+            <td>不经过防火墙审查，延迟恒定</td>
+          </tr>
+          <tr>
+            <td><strong>IEPL 国际以太网专线</strong></td>
+            <td>本地 &rarr; 二层以太网专用专线 &rarr; 境外机房</td>
+            <td><strong style="color: var(--accent-emerald);">否（二层专用以太网）</strong></td>
+            <td><strong style="color: var(--accent-emerald);">极低时延与抖动</strong></td>
+            <td>企业级高端线路，抗封锁天花板</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout callout-info">
+        <strong>💡 为什么 IPLC/IEPL 专线不会被墙？</strong><br>
+        因为 IPLC (International Private Leased Circuit) 是跨国电信运营商在物理光纤上划出的端到端企业专属隧道，数据直接从境内机房通过内网海底电缆传送到境外机房，根本不走公网的 GFW 国际出口路由器，因此防火墙无法对其进行包检测或主动探测阻断。
+      </div>
+    </article>
+
+    <!-- 知识板块 3: 协议横评 -->
+    <article class="wiki-card" id="protocols-diff">
+      <h2>⚡ 三、主流代理协议深度对比：VLESS Reality、Trojan、Hysteria2</h2>
+      <p>
+        协议的主要作用是在公网传输中实现“隐蔽防封”或在弱网下实现“高吞吐低延迟”。
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0;">
+        <div style="background: rgba(0,0,0,0.25); border-radius: var(--radius-md); padding: 18px; border: 1px solid var(--border-color);">
+          <h4 style="color: #60a5fa; margin-bottom: 8px;">1. VLESS Reality</h4>
+          <p style="font-size: 0.88rem; color: #cbd5e1;">
+            Xray 团队打造的划时代协议。消除传统 TLS 证书特征，借用真实合规海外大厂（如 Apple、Microsoft）的 SNI 与证书伪装握手，服务端无独立证书痕迹，抗主动探测能力极强。
+          </p>
+        </div>
+        <div style="background: rgba(0,0,0,0.25); border-radius: var(--radius-md); padding: 18px; border: 1px solid var(--border-color);">
+          <h4 style="color: #fbbf24; margin-bottom: 8px;">2. Trojan / Trojan-Go</h4>
+          <p style="font-size: 0.88rem; color: #cbd5e1;">
+            将流量完美伪装成最常见的标准 HTTPS 网站流量。若遇到未经认证的探测包，直接返回真实合规的 Web 页面，防封稳定，兼容性极广。
+          </p>
+        </div>
+        <div style="background: rgba(0,0,0,0.25); border-radius: var(--radius-md); padding: 18px; border: 1px solid var(--border-color);">
+          <h4 style="color: #f43f5e; margin-bottom: 8px;">3. Hysteria2 (Hy2)</h4>
+          <p style="font-size: 0.88rem; color: #cbd5e1;">
+            基于标准 QUIC (UDP) 开发的新一代双边拥塞控制协议。即便在丢包率 20%~30% 的极恶劣弱网或晚高峰拥堵下，依然能跑满本地数百兆带宽，视频与游戏秒开。
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 知识板块 4: 原生 IP 解锁 -->
+    <article class="wiki-card" id="native-ip">
+      <h2>🎬 四、IP 类型揭秘：原生住宅 IP 与流媒体/AI 解锁本质</h2>
+      <p>
+        为什么很多节点可以正常打开 Google，但打开 Netflix 却提示“您似乎在使用代理”，或者访问 ChatGPT 提示“Access Denied”？
+      </p>
+      <h3>机房广播 IP vs 原生住宅 IP：</h3>
+      <ul>
+        <li><strong>机房广播 IP (Hosting/Data Center IP)：</strong> 归属于机房数据中心（如 AWS、Google Cloud、DigitalOcean 等），这类 IP 段公开透明，极易被 Netflix、Disney+ 与 OpenAI 识别并直接拉黑；</li>
+        <li><strong>原生住宅 IP (Residential/Native IP)：</strong> 注册机构归属于当地民用宽带运营商（如香港 HKT/PCCW、日本 NTT、美国 Comcast）。目标平台判定为真实家庭用户访问，因而能实现 100% 顺畅解锁。</li>
+      </ul>
+      <div style="margin-top: 12px;">
+        <a href="tools.html#ip-check" class="btn btn-secondary btn-sm">使用本站工具查询当前 IP 纯净度 &rarr;</a>
+      </div>
+    </article>
+
+    <!-- 知识板块 5: 避坑法则 -->
+    <article class="wiki-card" id="anti-fraud">
+      <h2>🚨 五、机场跑路高风险特征排查与防坑准则</h2>
+      <p>
+        网络代理服务属于重资产运营行业，服务器带宽与内网专线均需要高昂的按月硬性成本。以下特征是典型的跑路高发信号：
+      </p>
+      <div class="callout callout-warning">
+        <ul style="margin-left: 20px; line-height: 1.8;">
+          <li><strong>“99元永久不限量”或“50元买三年”：</strong> 违背商业经济常识。专线带宽每 Mbps 成本固定，超低价长期套餐往往是资金链断裂前圈钱跑路的套路；</li>
+          <li><strong>成立时间不满半年且无任何沟通社群：</strong> 缺乏真实运营沉淀，遇到网络封锁容易直接失联；</li>
+          <li><strong>坚守【尽量月付】第一原则：</strong> 无论任何宣传多么诱人的机场，初次使用均建议先买最小规格月付进行晚高峰验证。</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- 知识板块 6: 隐私安全 -->
+    <article class="wiki-card" id="dns-security">
+      <h2>🛡️ 六、隐私安全指南：WebRTC 与 DNS 泄漏排查</h2>
+      <p>
+        很多用户误以为开启了代理系统就绝对安全，但在很多情况下，浏览器自身会无意泄漏您的真实国内地理位置：
+      </p>
+      <ul>
+        <li><strong>WebRTC 泄漏：</strong> 网页即使通过代理加载，其内部嵌入的 WebRTC 脚本也可以直接向 STUN 服务器发起 UDP 嗅探，抓取本机的局域网与国内公网 IP；</li>
+        <li><strong>DNS 污染与泄漏：</strong> 若客户端没有配置 Fake-IP，域名的解析请求依然发向了本地 ISP（如 114.114.114.114 或 运营商 DNS），导致访问记录被完整留存。</li>
+      </ul>
+      <p>
+        <strong>防御方案：</strong> 推荐使用现代化客户端（如 Clash Verge Rev、Sing-box），开启 <strong>TUN 模式</strong> 与 <strong>Fake-IP 模式</strong>，并在浏览器中安装 WebRTC 屏蔽插件。
+      </p>
+      <div style="margin-top: 14px;">
+        <a href="tools.html#dns-check" class="btn btn-secondary btn-sm">在线检测当前 DNS 泄漏状态 &rarr;</a>
+        <a href="tutorial-clash.html" class="btn btn-primary btn-sm" style="margin-left: 8px;">查看 Clash Verge 配置教程 &rarr;</a>
+      </div>
+    </article>
+  </main>
+
+  <!-- 底部页脚 -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 14px;">
+            <span class="logo-badge">⚡</span>
+            <span>节点库 <span class="domain">.online</span></span>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px;">
+            节点库致力于打造公开、严谨、客观的网络中继知识百科，提供全方位的专线技术科普与避坑指导。
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>站点导航</h5>
+          <ul>
+            <li><a href="index.html">网站首页</a></li>
+            <li><a href="nodes.html">今日节点库</a></li>
+            <li><a href="recommend.html">机场推荐</a></li>
+            <li><a href="reviews.html">机场评测</a></li>
+            <li><a href="knowledge.html">机场知识库</a></li>
+            <li><a href="clients.html">客户端下载</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>外部权威资源</h5>
+          <ul>
+            <li><a href="https://github.com/XTLS/Xray-core" target="_blank" rel="noopener noreferrer">Xray-core 官方项目 ↗</a></li>
+            <li><a href="https://github.com/apernet/hysteria" target="_blank" rel="noopener noreferrer">Hysteria2 官方仓库 ↗</a></li>
+            <li><a href="https://fast.com/" target="_blank" rel="noopener noreferrer">Fast.com 全球测速 ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>声明与支持</h5>
+          <ul>
+            <li><a href="about.html#disclaimer">法律免责声明</a></li>
+            <li><a href="about.html#contact">联系站长 / 提交纠错</a></li>
+            <li><a href="sitemap.xml">网站地图 (Sitemap)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 jiedianku.online. 版权所有 保留所有权利。</div>
+        <div>知识库内容仅供计算机网络学术研究与技术探讨。</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
